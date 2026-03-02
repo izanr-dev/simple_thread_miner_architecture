@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>Proof of Work (PoW) Simulator</h1>
-  <p><i>A multiprocess and multithreaded Proof of Work proof of concept in C</i></p>
+  <h1>PoW Miner Architecture</h1>
+  <p><i>A multiprocess and multithreaded Proof of Work based on miners</i></p>
 </div>
 
 <br>
