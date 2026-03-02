@@ -29,3 +29,22 @@ The architecture is built upon a **multiprocess** and **multithreaded** model:
 The project includes a `Makefile` to automate the build process. To generate the executable, navigate to the project root and run:
 ```bash
 make
+```
+
+<br>
+
+## Testing
+
+To test the program, the Makefile includes some preloaded examples and the same examples passing valgrind (runv and runv-heavy)
+```bash
+make run
+```
+```bash
+make run-heavy
+```
+```bash
+make runv
+```
+```bash
+make runv-heavy
+```
