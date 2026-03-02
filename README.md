@@ -35,7 +35,7 @@ make
 
 ## Testing
 
-To test the program, the Makefile includes some preloaded examples and the same examples passing valgrind (runv and runv-heavy)
+To test the program, the Makefile includes some preloaded examples and the same examples but passing valgrind (runv and runv-heavy)
 ```bash
 make run
 ```
