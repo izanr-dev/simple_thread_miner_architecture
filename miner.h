@@ -2,7 +2,7 @@
  * @file miner.h
  * @author Izan Roble
  * @author Javier Ruiz
- * @brief Header of the functions for miner execution 
+ * @brief Header of the functions for miner execution
  */
 
 #ifndef MINER_H
@@ -14,7 +14,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-typedef struct {
+typedef struct
+{
     long int target;
     long int start;
     long int end;
@@ -23,12 +24,12 @@ typedef struct {
 } ThreadArgs;
 
 /**
- * @brief Logic for every thread 
+ * @brief Logic for every thread
  */
 void *mine_thread(void *arg);
 
-/** 
- * @brief Logic for the miner 
+/**
+ * @brief Logic for the miner
  */
 int miner_process(int write_fd, char *target_ini, int rounds, int n_threads);
 
