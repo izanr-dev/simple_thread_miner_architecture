@@ -1,34 +1,34 @@
 <div align="center">
-  <h1>simple_pow_miner_architecture</h1>
-  <p><i>Simulación multiproceso y multihilo de minería Proof of Work (PoW) en C</i></p>
+  <h1>Proof of Work (PoW) Simulator</h1>
+  <p><i>A multiprocess and multithreaded Proof of Work proof of concept in C</i></p>
 </div>
 
 <br>
 
-## Descripción
+## Description
 
-[cite_start]Desarrollada en C bajo el estándar POSIX que emula el comportamiento de una red de minería de bloques inspirada en la tecnología Blockchain. [cite_start]El sistema resuelve retos matemáticos y criptográficos (Proof of Work) mediante fuerza bruta, distribuyendo la carga de trabajo de forma eficiente[cite: 1002, 1004].
+[cite_start]This project is a Proof of Concept (PoC) developed in C using the POSIX standard[cite: 12]. [cite_start]It simulates the core mechanics of a Proof of Work (PoW) mining system[cite: 1001, 1002]. [cite_start]The application solves mathematical hashing challenges by brute force, efficiently distributing the computational workload[cite: 1004, 1006].
 
-[cite_start]La arquitectura de la aplicación se basa en un modelo **multiproceso** y **multihilo**[cite: 1013]:
-- [cite_start]Un proceso **Minero** que divide el espacio de búsqueda entre múltiples hilos paralelos[cite: 1031].
-- [cite_start]Un proceso **Registrador (Log)** que escucha asíncronamente a través de una tubería (*pipe*) y persiste los bloques validados en disco[cite: 1041, 1042].
-
-<br>
-
-## ✨ Características Principales
-
-- [cite_start]**Concurrencia escalable**: Uso de la librería `pthread` para dividir el espacio de búsqueda matemático equitativamente entre los hilos asignados[cite: 1034].
-- [cite_start]**Comunicación Inter-procesos (IPC)**: Sincronización y paso de mensajes entre el minero y el registrador mediante el uso de tuberías unidireccionales[cite: 1042].
-- [cite_start]**Gestión segura de memoria**: Código robusto frente a fugas de memoria (*memory leaks*) y procesos huérfanos, verificable a través de Valgrind.
-- [cite_start]**Persistencia de Datos**: Generación automática de archivos de registro (`.log`) estructurados que detallan cada ronda, tiempos, votos y el identificador del ganador.
+The architecture is built upon a **multiprocess** and **multithreaded** model:
+- [cite_start]A **Miner** process that divides the search space among multiple parallel threads[cite: 1031, 1034].
+- [cite_start]A **Logger** process that asynchronously listens through a unidirectional pipe and persists the validated blocks to disk[cite: 1041, 1042, 1044].
 
 <br>
 
-## 🚀 Compilación y Uso
+## Key Features
 
-[cite_start]El proyecto incluye un `Makefile` preconfigurado para automatizar la compilación, la ejecución y las pruebas del sistema.
+- [cite_start]**Scalable Concurrency**: Utilizes the `pthread` library to evenly divide the mathematical search space among the assigned threads[cite: 1011, 1034].
+- [cite_start]**Inter-Process Communication (IPC)**: Implements message passing and synchronization between the miner and the logger using an anonymous pipe[cite: 1042].
+- [cite_start]**Memory Management**: Structured to prevent memory leaks and orphan processes, ready for memory profiling[cite: 208, 316].
+- [cite_start]**Data Persistence**: Automatic generation of structured `.log` files detailing each round, target, solution, votes, and the winner's PID[cite: 1044, 1045].
 
-### Compilar el proyecto
-Para generar el ejecutable, simplemente sitúate en la raíz del proyecto y ejecuta:
+<br>
+
+## Compilation and Usage
+
+[cite_start]The project includes a `Makefile` to automate the build process, execution, and testing.
+
+### Build the Project
+To generate the executable, navigate to the project root and run:
 ```bash
 make
