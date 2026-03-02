@@ -14,6 +14,10 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+/**
+ * Tipo de dato para toda la info 
+ * que necesita cada hilo para funcionar
+ */
 typedef struct
 {
     long int target;
